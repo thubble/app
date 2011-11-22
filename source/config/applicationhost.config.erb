@@ -152,7 +152,7 @@
         <sites>
             <site name="app" id="2">
                 <application path="/" applicationPool="Clr4IntegratedAppPool">
-                <virtualDirectory path="/" physicalPath="<%= configatron.compiled_web_path %>" />
+                <virtualDirectory path="/" physicalPath="<%= configatron.compiled_web_path.gsub('/','\\') %>" />
                 </application>
                 <bindings>
                     <binding protocol="http" bindingInformation="*:1145:localhost" />

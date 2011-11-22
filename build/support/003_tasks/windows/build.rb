@@ -11,7 +11,7 @@ namespace :build do
 
   aspnetcompiler :web do|compile|
     compile.physical_path = "source/app.web.ui"
-    compile.target_path = "artifacts/web"
+    compile.target_path = configatron.compiled_web_path
     compile.force = true
   end
 
