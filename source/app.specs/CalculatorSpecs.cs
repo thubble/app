@@ -26,7 +26,7 @@ namespace app.specs
     public class when_attempting_to_add_a_negative_number : concern
     {
       Because b = () =>
-        spec.catch_exception(() => sut.add(1, 3));
+        spec.catch_exception(() => sut.add(1, -3));
 
       It should_throw_an_argument_exception = () =>
         spec.exception_thrown.ShouldBeAn<ArgumentException>();
