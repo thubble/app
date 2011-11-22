@@ -78,6 +78,8 @@
     <None Include="Rakefile" />
     <None Include="run_first" />
     <None Include="save_my_changes" />
+    <None Include="source\config\applicationhost.config.erb" />
+    <None Include="source\config\log4net.config.xml.erb" />
     <None Include="source\config\web.config.erb" />
     <None Include="start_new_exercise" />
   </ItemGroup>
