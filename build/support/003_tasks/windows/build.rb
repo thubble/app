@@ -9,5 +9,11 @@ namespace :build do
     csc.target = :library
   end
 
+  aspnetcompiler :web do|compile|
+    compile.physical_path = "source/app.web.ui"
+    compile.target_path = "artifacts/web"
+    compile.force = true
+  end
+
   task :rebuild => ["clean","compile"]
 end

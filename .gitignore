@@ -25,3 +25,4 @@ db_dev.rb
 log4net.config.xml
 web.config
 empty.cs
+applicationhost.config
