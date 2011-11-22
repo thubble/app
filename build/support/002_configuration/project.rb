@@ -1,7 +1,7 @@
 config = 
 {
   :course_name => 'Developer Bootcamp',
-  :project => "prep",
+  :project => "app",
   :target => "Debug",
   :source_dir =>"source",
   :all_references => UniqueFiles.new(Dir.glob("packages/**/*.{dll,exe}")).all_files,
