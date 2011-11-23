@@ -79,6 +79,8 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="web\application\Product.cs" />
+    <Compile Include="web\application\ViewTheProductsOfADepartment.cs" />
     <Compile Include="web\application\Department.cs" />
     <Compile Include="web\application\IDepartmentFinder.cs" />
     <Compile Include="web\application\IDisplayReportModels.cs" />
