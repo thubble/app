@@ -31,7 +31,7 @@ namespace app.specs
       Because b = () =>
         sut.process(request);
 
-	  It should_get_the_departments_in_a_department = () =>
+	  It should_get_the_products_in_a_department = () =>
 		 department_finder.received(x => x.get_the_products_in_a_department(parent_department));
 
       It should_display_the_report_model = () =>
