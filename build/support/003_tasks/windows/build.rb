@@ -15,5 +15,13 @@ namespace :build do
     compile.force = true
   end
 
+  task :stop_iis do
+    `taskkill -IM iisexpress.exe`
+  end
+
+  task :start_iis => [:stop_iis,:web] do
+    system("build/tools/iis_express/iisexpress.exe -config:source/config/applicationhost.config")
+  end
+
   task :rebuild => ["clean","compile"]
 end

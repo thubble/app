@@ -11,6 +11,7 @@ config =
   :app_dir => delayed{"source/#{configatron.project}"},
   :log_file_name => delayed{"#{configatron.project}_log.txt"},
   :our_new_setting => "This is cool",
-  :log_level => "DEBUG"
+  :log_level => "DEBUG",
+  :iis_express => '"c:\Program Files (x86)\IIS Express\iisexpress.exe"'
 }
 configatron.configure_from_hash config
