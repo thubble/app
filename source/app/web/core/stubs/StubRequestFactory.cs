@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using app.web.application;
 
 namespace app.web.core.stubs
 {
@@ -11,6 +12,11 @@ namespace app.web.core.stubs
 
     class StubRequest : IContainRequestInformation
     {
+        public Department Department
+        {
+            get { return new Department() {name = "Department 0"}; }
+            set { throw new System.NotImplementedException(); }
+        }
     }
   }
 }
