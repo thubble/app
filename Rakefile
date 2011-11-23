@@ -28,7 +28,13 @@ task :init  => :clean do
   end
 end
 
-task :copy_config_files do
+task :copy_all_tools do
+  configatron.all_references.each do|file|
+    FileUtils.cp(file,configatron.artifacts_dir)
+  end
+end
+
+task :copy_config_files => :copy_all_tools do
   config_files.each do |file|
       [configatron.artifacts_dir,configatron.app_dir].each do|folder|
         FileUtils.cp(file.name_without_template_extension,
