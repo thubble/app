@@ -79,7 +79,9 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="web\application\Department.cs" />
     <Compile Include="web\application\IDepartmentFinder.cs" />
+    <Compile Include="web\application\IViewDepartements.cs" />
     <Compile Include="web\application\ViewTheMainDepartmentsInTheStore.cs" />
     <Compile Include="web\core\BasicHandler.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
