@@ -17,7 +17,7 @@ namespace app.specs
 
     public class when_finding_a_command_to_process_a_request : concern
     {
-      public class and_it_has_the_command : when_finding_a_command_to_process_a_request
+      public class and_it_has_the_command 
       {
         Establish c = () =>
         {
@@ -42,6 +42,28 @@ namespace app.specs
         static IProcessOneRequest the_command_that_can_process;
         static IContainRequestInformation request;
         static List<IProcessOneRequest> all_commands;
+      }
+
+      public class and_it_does_not_have_the_command 
+      {
+        Establish c = () =>
+        {
+          all_commands = Enumerable.Range(1,100).Select(x => fake.an<IProcessOneRequest>()).ToList();
+          special_case = depends.on<IProcessOneRequest>();
+          request = fake.an<IContainRequestInformation>();
+          depends.on<IEnumerable<IProcessOneRequest>>(all_commands);
+        };
+
+        Because b = () =>
+          result = sut.get_the_command_that_can_process(request);
+
+
+      	It should_return_the_special_case = () =>
+      		result.ShouldEqual(special_case);
+
+        static IContainRequestInformation request;
+        static List<IProcessOneRequest> all_commands;
+        static IProcessOneRequest special_case;
       }
 
       static IProcessOneRequest result;
