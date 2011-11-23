@@ -4,25 +4,25 @@ using app.web.core.stubs;
 
 namespace app.web.application
 {
-    public class ViewTheProductsOfADepartments : IImplementAUseCase
+  public class ViewTheProductsOfADepartment : IImplementAUseCase
+  {
+    IFindInformationInTheStore find_information_in_the_store;
+    IDisplayReportModels response_gateway;
+
+    public ViewTheProductsOfADepartment(IDisplayReportModels response_gateway, IFindInformationInTheStore find_information_in_the_store)
     {
-        IDepartmentFinder department_finder;
-        IDisplayReportModels response_gateway;
-
-        public ViewTheProductsOfADepartments(IDisplayReportModels response_gateway, IDepartmentFinder department_finder)
-        {
-            this.response_gateway = response_gateway;
-            this.department_finder = department_finder;
-        }
-
-		public ViewTheProductsOfADepartments()
-            : this(new StubResponseEngine(), new StubDepartmentFinder())
-        {
-        }
-
-        public void process(IContainRequestInformation request)
-        {
-            response_gateway.display(department_finder.get_the_products_in_a_department(request.map<Department>()));
-        }
+      this.response_gateway = response_gateway;
+      this.find_information_in_the_store = find_information_in_the_store;
     }
+
+    public ViewTheProductsOfADepartment()
+      : this(new StubResponseEngine(), new StubFindInformationInTheStore())
+    {
+    }
+
+    public void process(IContainRequestInformation request)
+    {
+      response_gateway.display(find_information_in_the_store.get_the_products_in_a_department(request.map<Department>()));
+    }
+  }
 }

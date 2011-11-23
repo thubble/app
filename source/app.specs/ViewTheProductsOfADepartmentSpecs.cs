@@ -7,11 +7,11 @@ using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs
 {
-  [Subject(typeof(ViewTheProductsOfADepartments))]
+  [Subject(typeof(ViewTheProductsOfADepartment))]
   public class ViewTheProductsOfADepartmentSpecs
   {
     public abstract class concern : Observes<IImplementAUseCase,
-									  ViewTheProductsOfADepartments>
+									  ViewTheProductsOfADepartment>
     {
     }
 
@@ -21,23 +21,21 @@ namespace app.specs
       {
         request = fake.an<IContainRequestInformation>();
         products = new List<Product> {new Product()};
-        department_finder = depends.on<IDepartmentFinder>();
+        parent_department = new Department();
+        find_information_in_the_store = depends.on<IFindInformationInTheStore>();
         response_engine = depends.on<IDisplayReportModels>();
         request.setup(x => x.map<Department>()).Return(parent_department);
 
-        department_finder.setup(x => x.get_the_products_in_a_department(parent_department)).Return(products);
+        find_information_in_the_store.setup(x => x.get_the_products_in_a_department(parent_department)).Return(products);
       };
 
       Because b = () =>
         sut.process(request);
 
-	  It should_get_the_products_in_a_department = () =>
-		 department_finder.received(x => x.get_the_products_in_a_department(parent_department));
-
       It should_display_the_report_model = () =>
         response_engine.received(x => x.display(products));
 
-      static IDepartmentFinder department_finder;
+      static IFindInformationInTheStore find_information_in_the_store;
       static IContainRequestInformation request;
       static IDisplayReportModels response_engine;
       static IEnumerable<Product> products;

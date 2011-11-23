@@ -21,22 +21,22 @@ namespace app.specs
       {
         request = fake.an<IContainRequestInformation>();
         main_departments = new List<Department> {new Department()};
-        department_finder = depends.on<IDepartmentFinder>();
+        find_information_in_the_store = depends.on<IFindInformationInTheStore>();
         response_engine = depends.on<IDisplayReportModels>();
 
-        department_finder.setup(x => x.get_the_main_departments()).Return(main_departments);
+        find_information_in_the_store.setup(x => x.get_the_main_departments()).Return(main_departments);
       };
 
       Because b = () =>
         sut.process(request);
 
       It should_get_the_main_departments_in_the_store = () =>
-        department_finder.received(x => x.get_the_main_departments());
+        find_information_in_the_store.received(x => x.get_the_main_departments());
 
       It should_display_the_report_model = () =>
         response_engine.received(x => x.display(main_departments));
 
-      static IDepartmentFinder department_finder;
+      static IFindInformationInTheStore find_information_in_the_store;
       static IContainRequestInformation request;
       static IDisplayReportModels response_engine;
       static IEnumerable<Department> main_departments;

@@ -6,22 +6,22 @@ namespace app.web.application
 {
   public class ViewTheMainDepartmentsInTheStore :IImplementAUseCase
   {
-    IDepartmentFinder department_finder;
+    IFindInformationInTheStore find_information_in_the_store;
     IDisplayReportModels response_gateway;
 
-    public ViewTheMainDepartmentsInTheStore(IDisplayReportModels response_gateway, IDepartmentFinder department_finder)
+    public ViewTheMainDepartmentsInTheStore(IDisplayReportModels response_gateway, IFindInformationInTheStore find_information_in_the_store)
     {
       this.response_gateway = response_gateway;
-      this.department_finder = department_finder;
+      this.find_information_in_the_store = find_information_in_the_store;
     }
 
-    public ViewTheMainDepartmentsInTheStore():this(new StubResponseEngine(),new StubDepartmentFinder())
+    public ViewTheMainDepartmentsInTheStore():this(new StubResponseEngine(),new StubFindInformationInTheStore())
     {
     }
 
     public void process(IContainRequestInformation request)
     {
-      response_gateway.display(department_finder.get_the_main_departments());
+      response_gateway.display(find_information_in_the_store.get_the_main_departments());
     }
   }
 }

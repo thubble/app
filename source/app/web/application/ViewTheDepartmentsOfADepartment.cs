@@ -6,23 +6,23 @@ namespace app.web.application
 {
     public class ViewTheDepartmentsOfADepartment : IImplementAUseCase
     {
-        IDepartmentFinder department_finder;
+        IFindInformationInTheStore find_information_in_the_store;
         IDisplayReportModels response_gateway;
 
-        public ViewTheDepartmentsOfADepartment(IDisplayReportModels response_gateway, IDepartmentFinder department_finder)
+        public ViewTheDepartmentsOfADepartment(IDisplayReportModels response_gateway, IFindInformationInTheStore find_information_in_the_store)
         {
             this.response_gateway = response_gateway;
-            this.department_finder = department_finder;
+            this.find_information_in_the_store = find_information_in_the_store;
         }
 
         public ViewTheDepartmentsOfADepartment()
-            : this(new StubResponseEngine(), new StubDepartmentFinder())
+            : this(new StubResponseEngine(), new StubFindInformationInTheStore())
         {
         }
 
         public void process(IContainRequestInformation request)
         {
-            response_gateway.display(department_finder.get_the_departments_in_a_department(request.map<Department>()));
+            response_gateway.display(find_information_in_the_store.get_the_departments_in_a_department(request.map<Department>()));
         }
     }
 }

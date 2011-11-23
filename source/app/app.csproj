@@ -82,9 +82,9 @@
     <Compile Include="web\application\Product.cs" />
     <Compile Include="web\application\ViewTheProductsOfADepartment.cs" />
     <Compile Include="web\application\Department.cs" />
-    <Compile Include="web\application\IDepartmentFinder.cs" />
+    <Compile Include="web\application\IFindInformationInTheStore.cs" />
     <Compile Include="web\application\IDisplayReportModels.cs" />
-    <Compile Include="web\application\stubs\StubDepartmentFinder.cs" />
+    <Compile Include="web\application\stubs\StubFindInformationInTheStore.cs" />
     <Compile Include="web\application\ViewTheDepartmentsOfADepartment.cs" />
     <Compile Include="web\application\ViewTheMainDepartmentsInTheStore.cs" />
     <Compile Include="web\core\BasicHandler.cs" />

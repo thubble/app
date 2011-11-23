@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace app.web.application.stubs
 {
-    public class StubDepartmentFinder : IDepartmentFinder
+    public class StubFindInformationInTheStore : IFindInformationInTheStore
     {
         public IEnumerable<Department> get_the_main_departments()
         {
