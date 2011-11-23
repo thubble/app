@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using app.web.core.stubs;
 
 namespace app.web.core
 {
@@ -14,7 +15,11 @@ namespace app.web.core
 			this.fallback = fallback;
 		}
 
-		public IProcessOneRequest get_the_command_that_can_process(IContainRequestInformation request)
+    public CommandRegistry():this(new StubSetOfCommands(),new StubMissingCommand())
+	  {
+	  }
+
+	  public IProcessOneRequest get_the_command_that_can_process(IContainRequestInformation request)
 		{
 		  return this.commands.FirstOrDefault(c => c.can_handle(request)) ?? fallback;
 		}
