@@ -1,9 +1,7 @@
-﻿using app.web.application;
-
-namespace app.web.core
+﻿namespace app.web.core
 {
   public interface IContainRequestInformation
   {
-      Department Department { get; set; }
+    ViewModel map<ViewModel>();
   }
 }

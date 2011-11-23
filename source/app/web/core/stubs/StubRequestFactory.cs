@@ -12,11 +12,12 @@ namespace app.web.core.stubs
 
     class StubRequest : IContainRequestInformation
     {
-        public Department Department
-        {
-            get { return new Department() {name = "Department 0"}; }
-            set { throw new System.NotImplementedException(); }
-        }
+
+      public ViewModel map<ViewModel>()
+      {
+        object department = new Department();
+        return (ViewModel) department;
+      }
     }
   }
 }

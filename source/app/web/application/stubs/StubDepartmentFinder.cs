@@ -12,9 +12,7 @@ namespace app.web.application.stubs
 
         public IEnumerable<Department> get_the_departments_in_a_department(Department department)
         {
-            return
-                Enumerable.Range(1, 10).Select(
-                    x => new Department {name = x.ToString("Department 0 of " + department.name)});
+            return Enumerable.Range(1, 10).Select( x => new Department {name = x.ToString("Sub Department 0")});
         }
     }
 }

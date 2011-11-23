@@ -22,7 +22,7 @@ namespace app.web.application
 
         public void process(IContainRequestInformation request)
         {
-            response_gateway.display(department_finder.get_the_departments_in_a_department(request.Department));
+            response_gateway.display(department_finder.get_the_departments_in_a_department(request.map<Department>()));
         }
     }
 }
