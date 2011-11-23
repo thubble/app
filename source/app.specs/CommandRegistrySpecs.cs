@@ -36,8 +36,8 @@ namespace app.specs
           result = sut.get_the_command_that_can_process(request);
 
 
-        It should_return_the_command_to_the_caller = () =>
-          result.ShouldEqual(the_command_that_can_process)
+      	It should_return_the_command_to_the_caller = () =>
+      		result.ShouldEqual(the_command_that_can_process);
 
         static IProcessOneRequest the_command_that_can_process;
         static IContainRequestInformation request;
