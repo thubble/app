@@ -6,25 +6,26 @@ namespace app
 {
 	public class Calculator
 	{
-	  IDbConnection connection;
+		IDbConnection connection;
 
-	  public Calculator(IDbConnection connection)
-	  {
-	    this.connection = connection;
-	  }
-
-	  public int add(int first, int second)
+		public Calculator(IDbConnection connection)
 		{
-		  ensure_all_are_positive(first, second);
-
-	    connection.Open();
-
-		  return first + second;
+			this.connection = connection;
 		}
 
-	  static void ensure_all_are_positive(params int[] numbers)
-	  {
-	    if (numbers.Any(x => x < 0)) throw new ArgumentException("You cannot add negative numbers");
-	  }
+		public int add(int first, int second)
+		{
+			ensure_all_are_positive(first, second);
+
+			connection.Open();
+			IDbCommand command = connection.CreateCommand();
+			command.ExecuteNonQuery();
+			return first + second;
+		}
+
+		static void ensure_all_are_positive(params int[] numbers)
+		{
+			if (numbers.Any(x => x < 0)) throw new ArgumentException("You cannot add negative numbers");
+		}
 	}
 }
