@@ -5,16 +5,22 @@ namespace app.web.core
 {
 	public class CommandRegistry : IFindCommands
 	{
-		IEnumerable<IProcessOneRequest> commands;
+		readonly IEnumerable<IProcessOneRequest> commands;
+		readonly IProcessOneRequest fallback;
 
-		public CommandRegistry(IEnumerable<IProcessOneRequest> commands)
+		public CommandRegistry(IEnumerable<IProcessOneRequest> commands, IProcessOneRequest fallback)
 		{
 			this.commands = commands;
+			this.fallback = fallback;
 		}
 
 		public IProcessOneRequest get_the_command_that_can_process(IContainRequestInformation request)
 		{
-			return commands.Where(x => x.can_handle(request)).First();
+			var command = this.commands.FirstOrDefault(c => c.can_handle(request));
+			if (command == null)
+				return fallback;
+
+			return command;
 		}
 	}
 }
