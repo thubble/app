@@ -19,16 +19,16 @@ namespace app.specs
             Establish c = () =>
             {
                 request = fake.an<IContainRequestInformation>();
-                departmentFinder = depends.on<IDepartmentFinder>();
+                department_finder = depends.on<IDepartmentFinder>();
             };
 
             Because b = () =>
                 sut.process(request);
 
-            It should_delegate_finding_the_main_departments_in_the_store = () =>
-                departmentFinder.received(x => x.FindDepartments(request));
+            It should_get_the_main_departments_in_the_store = () =>
+                department_finder.received(x => x.get_the_main_departments());
 
-            static IDepartmentFinder departmentFinder;
+            static IDepartmentFinder department_finder;
             static IContainRequestInformation request;
         }
     }
