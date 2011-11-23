@@ -20,8 +20,8 @@ namespace app.specs
       Establish c = () =>
       {
         request = fake.an<IContainRequestInformation>();
-        command_that_can_process = fake.an<IProcessOneRequest>();
         command_registry = depends.on<IFindCommands>();
+        command_that_can_process = fake.an<IProcessOneRequest>();
 
         command_registry.setup(x => x.get_the_command_that_can_process(request)).Return(command_that_can_process);
       };

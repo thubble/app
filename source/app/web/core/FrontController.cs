@@ -2,15 +2,16 @@
 {
   public class FrontController : IProcessRequests
   {
-      IFindCommands CommandFinder; 
+    IFindCommands command_registry;
 
-      public FrontController(IFindCommands finder)
-      {
-          this.CommandFinder = finder;
-      }
+    public FrontController(IFindCommands registry)
+    {
+      this.command_registry = registry;
+    }
+
     public void process(IContainRequestInformation a_request)
     {
-        this.CommandFinder.get_the_command_that_can_process(a_request).process(a_request);
+      this.command_registry.get_the_command_that_can_process(a_request).process(a_request);
     }
   }
 }
