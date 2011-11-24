@@ -15,7 +15,7 @@ namespace app.web.application
     }
 
 	public ViewReport(IRunQuery<TResponse> query)
-		: this(query, StubFactory.with<StubResponseEngine>())
+		: this(query, Stub.with<StubResponseEngine>())
     {
     }
 

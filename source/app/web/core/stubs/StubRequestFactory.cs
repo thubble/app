@@ -7,7 +7,7 @@ namespace app.web.core.stubs
   {
     public IContainRequestInformation create_from(HttpContext the_context)
     {
-		return StubFactory.with<StubRequest>();
+		return Stub.with<StubRequest>();
     }
 
     class StubRequest : IContainRequestInformation

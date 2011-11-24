@@ -16,7 +16,7 @@ namespace app.web.application
 		}
 
 		public ViewTheProductsInADepartment()
-			: this(StubFactory.with<StubResponseEngine>(), StubFactory.with<StubProductFinder>())
+			: this(Stub.with<StubResponseEngine>(), Stub.with<StubProductFinder>())
 		{
 		}
 

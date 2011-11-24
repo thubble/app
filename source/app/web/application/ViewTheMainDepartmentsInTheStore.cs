@@ -16,7 +16,7 @@ namespace app.web.application
     }
 
 	public ViewTheMainDepartmentsInTheStore()
-		: this(StubFactory.with<StubResponseEngine>(), StubFactory.with<StubFindInformationInTheStore>())
+		: this(Stub.with<StubResponseEngine>(), Stub.with<StubFindInformationInTheStore>())
     {
     }
 

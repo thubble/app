@@ -23,7 +23,7 @@ namespace app.web.core.stubs
   {
     public IEnumerable<Department> run_using(IContainRequestInformation request)
     {
-		return StubFactory.with<StubFindInformationInTheStore>().get_the_departments_in_a_department(request.map<Department>());
+		return Stub.with<StubFindInformationInTheStore>().get_the_departments_in_a_department(request.map<Department>());
     }
   }
 
@@ -31,7 +31,7 @@ namespace app.web.core.stubs
   {
     public IEnumerable<Department> run_using(IContainRequestInformation request)
     {
-		return StubFactory.with<StubFindInformationInTheStore>().get_the_main_departments();
+		return Stub.with<StubFindInformationInTheStore>().get_the_main_departments();
     }
   }
 }

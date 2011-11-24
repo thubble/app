@@ -16,7 +16,7 @@ namespace app.web.core
 		}
 
 		public CommandRegistry()
-			: this(StubFactory.with<StubSetOfCommands>(), StubFactory.with<StubMissingCommand>())
+			: this(Stub.with<StubSetOfCommands>(), Stub.with<StubMissingCommand>())
 	  {
 	  }
 

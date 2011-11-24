@@ -9,7 +9,7 @@ namespace app.web.core
     ICreateRequests request_factory;
 
 	public BasicHandler()
-		: this(new FrontController(), StubFactory.with<StubRequestFactory>())
+		: this(new FrontController(), Stub.with<StubRequestFactory>())
     {
     }
 
