@@ -1,5 +1,4 @@
 ﻿using System.Web;
-using System.Web.UI;
 using Machine.Specifications;
 using app.web.core.aspnet;
 using developwithpassion.specifications.extensions;
@@ -39,11 +38,9 @@ namespace app.specs
 
       It should_populate_the_template_with_its_data = () =>
         the_page.model.ShouldEqual(the_model);
-        
 
       It should_create_the_page_for_the_model = () =>
         result.ShouldEqual(the_page);
-
 
       static IFindPathsToViews page_path_registry;
       static OurViewModel the_model;

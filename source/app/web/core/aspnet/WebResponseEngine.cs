@@ -13,7 +13,7 @@ namespace app.web.core.aspnet
       this.current_context = current_context;
     }
 
-    public WebResponseEngine(ICreateAResponse response_factory):this(response_factory,() => HttpContext.Current)
+    public WebResponseEngine():this(new PageFactory(),() => HttpContext.Current)
     {
     }
 

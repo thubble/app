@@ -93,6 +93,7 @@
     <Compile Include="web\core\aspnet\IDisplayA.cs" />
     <Compile Include="web\core\aspnet\IFindPathsToViews .cs" />
     <Compile Include="web\core\aspnet\PageFactory.cs" />
+    <Compile Include="web\core\aspnet\stubs\StubPathRegistry.cs" />
     <Compile Include="web\core\aspnet\TemplateFactory.cs" />
     <Compile Include="web\core\BasicHandler.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
@@ -113,7 +114,6 @@
     <Compile Include="web\core\aspnet\WebResponseEngine.cs" />
     <Compile Include="web\core\stubs\StubMissingCommand.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
-    <Compile Include="web\core\stubs\StubResponseEngine.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
     <Compile Include="web\core\stubs\TestStub.cs" />
   </ItemGroup>

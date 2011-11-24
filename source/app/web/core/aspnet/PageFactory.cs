@@ -1,12 +1,13 @@
 ﻿using System.Web;
 using System.Web.UI;
+using app.web.core.aspnet.stubs;
 
 namespace app.web.core.aspnet
 {
   public class PageFactory : ICreateAResponse
   {
-  	private IFindPathsToViews page_path_registry;
-  	private TemplateFactory template_factory;
+  	IFindPathsToViews page_path_registry;
+    TemplateFactory template_factory;
 
 		public PageFactory(IFindPathsToViews page_path_registry, TemplateFactory template_factory)
 		{

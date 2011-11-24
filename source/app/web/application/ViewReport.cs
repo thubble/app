@@ -1,4 +1,5 @@
 ﻿using app.web.core;
+using app.web.core.aspnet;
 using app.web.core.stubs;
 
 namespace app.web.application
@@ -15,7 +16,7 @@ namespace app.web.application
     }
 
 	public ViewReport(IRunQuery<TResponse> query)
-		: this(query, Stub.with<StubResponseEngine>())
+		: this(query, new WebResponseEngine())
     {
     }
 
