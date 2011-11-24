@@ -94,9 +94,9 @@
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\IContainRequestInformation.cs" />
-    <Compile Include="web\core\ICreateAnHttpContext.cs" />
+    <Compile Include="web\core\ICreateAResponse.cs" />
     <Compile Include="web\core\IDisplayReportModels.cs" />
-    <Compile Include="web\core\ISendAnHttpContext.cs" />
+    <Compile Include="web\core\ISendAResponse.cs" />
     <Compile Include="web\core\ICreateRequests.cs" />
     <Compile Include="web\core\IFindCommands.cs" />
     <Compile Include="web\core\IRunQuery.cs" />
