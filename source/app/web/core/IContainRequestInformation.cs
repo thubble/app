@@ -2,6 +2,7 @@
 {
   public interface IContainRequestInformation
   {
-    ViewModel map<ViewModel>();
+		MappableType map<MappableType>();
+		MappableType map<MappableType, MappableParentType>(MappableParentType parent);
   }
 }

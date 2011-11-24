@@ -13,11 +13,17 @@ namespace app.web.core.stubs
     class StubRequest : IContainRequestInformation
     {
 
-      public ViewModel map<ViewModel>()
+			public MappableType map<MappableType>()
       {
         object department = new Department();
-        return (ViewModel) department;
+				return (MappableType)department;
       }
-    }
+
+
+			public MappableType map<MappableType, MappableParentType>(MappableParentType parent)
+			{
+				throw new System.NotImplementedException();
+			}
+		}
   }
 }
