@@ -1,4 +1,4 @@
-﻿namespace app.web.application
+namespace app.web.core
 {
   public interface IDisplayReportModels
   {

@@ -87,7 +87,6 @@
     <Compile Include="web\application\ViewTheProductsInADepartment.cs" />
     <Compile Include="web\application\IProductFinder.cs" />
     <Compile Include="web\application\Department.cs" />
-    <Compile Include="web\application\IDisplayReportModels.cs" />
     <Compile Include="web\application\Product.cs" />
     <Compile Include="web\application\ViewTheDepartmentsOfADepartment.cs" />
     <Compile Include="web\application\ViewTheMainDepartmentsInTheStore.cs" />
@@ -95,6 +94,9 @@
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\IContainRequestInformation.cs" />
+    <Compile Include="web\core\ICreateAnHttpResponse.cs" />
+    <Compile Include="web\core\IDisplayReportModels.cs" />
+    <Compile Include="web\core\ISendAnHttpResponse.cs" />
     <Compile Include="web\core\ICreateRequests.cs" />
     <Compile Include="web\core\IFindCommands.cs" />
     <Compile Include="web\core\IRunQuery.cs" />
