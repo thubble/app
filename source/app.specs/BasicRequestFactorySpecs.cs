@@ -1,4 +1,6 @@
-﻿using System.Web;
+﻿using System;
+using System.IO;
+using System.Web;
 using Machine.Specifications;
 using app.specs.utility;
 using app.web.core;
@@ -24,7 +26,8 @@ namespace app.specs
 				request_path_mapper = depends.on<IMapRequestsToPaths>();
 
 				a_request = fake.an<IContainRequestInformation>();
-				the_context = new HttpContext(new HttpRequest("FILENAME", "URL", "QUERY"), new HttpResponse(null));
+
+				the_context = new HttpContext(new HttpRequest("test_implementation.iqmetrix", "http://localhost/test_implementation.iqmetrix", String.Empty), new HttpResponse(new StringWriter()));
 
 				//request_path_mapper.setup(x => x.get_request_that_can_handle_path("URL")).Return(a_request);
 			};
@@ -34,7 +37,7 @@ namespace app.specs
 
 
 			It should_delegate_finding_request_to_registry = () =>
-				request_path_mapper.received(x => x.get_request_that_can_handle_path("URL"));
+				request_path_mapper.received(x => x.get_request_that_can_handle_path("/test_implementation.iqmetrix"));
 
 			static IMapRequestsToPaths request_path_mapper;
 			static IContainRequestInformation result;
