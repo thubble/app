@@ -15,8 +15,8 @@ namespace app.web.core.stubs
 
       public ViewModel map<ViewModel>()
       {
-        object department = new Department();
-        return (ViewModel) department;
+        object val = new Product();
+		return (ViewModel)val;
       }
     }
   }
