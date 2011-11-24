@@ -33,6 +33,7 @@ namespace app.specs
             Because b = () => sut.display(report_view);
 
             It should_create_an_http_request = () => response_creater.received(x => x.create_response(report_view));
+            
             It should_send_an_http_response = () => response_sender.received(x => x.send_response(httpResponse));
                 
             private static IEnumerable<Department> report_view;
