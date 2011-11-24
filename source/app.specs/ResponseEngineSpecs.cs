@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web;
 using Machine.Specifications;
+using app.specs.utility;
 using app.web.application;
 using app.web.core;
 using developwithpassion.specifications.extensions;
@@ -8,11 +9,11 @@ using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs
 {
-    [Subject(typeof(ResponseEngine))]
+    [Subject(typeof(WebResponseEngine))]
     public class ResponseEngineSpecs
     {
         public abstract class concern : Observes<IDisplayReportModels,
-                                                    ResponseEngine>
+                                                    WebResponseEngine>
         {
         }
 
@@ -23,7 +24,7 @@ namespace app.specs
                 response_sender = depends.on<ISendAResponse>();
                 response_creater = depends.on<ICreateAResponse<HttpContext>>();
 
-                http_context = fake.an<HttpContext>();
+                http_context = ObjectFactory.web.create_http_context();
 
                 report_view = fake.an<IEnumerable<Department>>();
 
