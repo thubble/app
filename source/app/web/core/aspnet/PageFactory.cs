@@ -18,7 +18,7 @@ namespace app.web.core.aspnet
   	{
   		string path = this.page_path_registry.find_path_for<ReportModel>();
 
-  		return template_factory(path, typeof(Page)) as IHttpHandler;
+		return template_factory(path, typeof(IDisplayA<ReportModel>)) as IHttpHandler;
   	}
   }
 }
