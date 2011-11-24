@@ -15,7 +15,8 @@ namespace app.web.core
 			this.fallback = fallback;
 		}
 
-    public CommandRegistry():this(new StubSetOfCommands(),new StubMissingCommand())
+		public CommandRegistry()
+			: this(StubFactory.with<StubSetOfCommands>(), StubFactory.with<StubMissingCommand>())
 	  {
 	  }
 

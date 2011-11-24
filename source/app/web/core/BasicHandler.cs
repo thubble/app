@@ -8,7 +8,8 @@ namespace app.web.core
     IProcessRequests front_controller;
     ICreateRequests request_factory;
 
-    public BasicHandler():this(new FrontController(),new StubRequestFactory())
+	public BasicHandler()
+		: this(new FrontController(), StubFactory.with<StubRequestFactory>())
     {
     }
 

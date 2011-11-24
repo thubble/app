@@ -15,7 +15,8 @@ namespace app.web.application
       this.find_information_in_the_store = find_information_in_the_store;
     }
 
-    public ViewTheMainDepartmentsInTheStore():this(new StubResponseEngine(),new StubFindInformationInTheStore())
+	public ViewTheMainDepartmentsInTheStore()
+		: this(StubFactory.with<StubResponseEngine>(), StubFactory.with<StubFindInformationInTheStore>())
     {
     }
 

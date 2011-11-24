@@ -14,7 +14,8 @@ namespace app.web.application
       this.response_gateway = response_gateway;
     }
 
-    public ViewReport(IRunQuery<TResponse> query):this(query,new StubResponseEngine())
+	public ViewReport(IRunQuery<TResponse> query)
+		: this(query, StubFactory.with<StubResponseEngine>())
     {
     }
 

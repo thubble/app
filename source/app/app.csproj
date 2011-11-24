@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="StubFactory.cs" />
     <Compile Include="web\application\IFindInformationInTheStore.cs" />
     <Compile Include="web\application\stubs\StubFindInformationInTheStore.cs" />
     <Compile Include="web\application\ViewReport.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubResponseEngine.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
+    <Compile Include="web\core\stubs\TestStub.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
