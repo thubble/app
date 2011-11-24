@@ -90,6 +90,7 @@
     <Compile Include="web\application\Product.cs" />
     <Compile Include="web\application\ViewTheDepartmentsOfADepartment.cs" />
     <Compile Include="web\application\ViewTheMainDepartmentsInTheStore.cs" />
+    <Compile Include="web\core\aspnet\IDisplayA.cs" />
     <Compile Include="web\core\aspnet\IFindPathsToViews .cs" />
     <Compile Include="web\core\aspnet\PageFactory.cs" />
     <Compile Include="web\core\aspnet\TemplateFactory.cs" />

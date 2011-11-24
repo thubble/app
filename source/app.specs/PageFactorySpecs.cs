@@ -19,7 +19,7 @@ namespace app.specs
     {
       Establish c = () =>
       {
-        the_page = fake.an<IHttpHandler>();
+        the_page = fake.an<IDisplayA<OurViewModel>>();
         the_page_path = "asfasfsa.aspx";
         the_model = new OurViewModel();
 
@@ -27,7 +27,7 @@ namespace app.specs
         depends.on<TemplateFactory>((path, type) =>
         {
           path.ShouldEqual(the_page_path);
-          type.ShouldEqual(typeof(Page));
+          type.ShouldEqual(typeof(IDisplayA<OurViewModel>));
           return the_page;
         });
 
@@ -37,6 +37,9 @@ namespace app.specs
       Because b = () =>
         result = sut.create_using(the_model);
 
+      It should_populate_the_template_with_its_data = () =>
+        the_page.model.ShouldEqual(the_model);
+        
 
       It should_create_the_page_for_the_model = () =>
         result.ShouldEqual(the_page);
@@ -45,7 +48,7 @@ namespace app.specs
       static IFindPathsToViews page_path_registry;
       static OurViewModel the_model;
       static string the_page_path;
-      static IHttpHandler the_page;
+      static IDisplayA<OurViewModel> the_page;
       static IHttpHandler result;
     }
 
