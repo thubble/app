@@ -117,8 +117,9 @@
     <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="CommandExecutorSpecs.cs" />
+    <Compile Include="PageFactorySpecs.cs" />
     <Compile Include="StubSpecs.cs" />
-    <Compile Include="ResponseEngineSpecs.cs" />
+    <Compile Include="WebResponseEngineSpecs.cs" />
     <Compile Include="ViewTheProductsInADepartmentSpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />

@@ -90,11 +90,14 @@
     <Compile Include="web\application\Product.cs" />
     <Compile Include="web\application\ViewTheDepartmentsOfADepartment.cs" />
     <Compile Include="web\application\ViewTheMainDepartmentsInTheStore.cs" />
+    <Compile Include="web\core\aspnet\IFindPathsToViews .cs" />
+    <Compile Include="web\core\aspnet\PageFactory.cs" />
     <Compile Include="web\core\BasicHandler.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
+    <Compile Include="web\core\aspnet\CurrentContextResolver.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\IContainRequestInformation.cs" />
-    <Compile Include="web\core\ICreateAResponse.cs" />
+    <Compile Include="web\core\aspnet\ICreateAResponse.cs" />
     <Compile Include="web\core\IDisplayReportModels.cs" />
     <Compile Include="web\core\ISendAResponse.cs" />
     <Compile Include="web\core\ICreateRequests.cs" />
@@ -105,7 +108,7 @@
     <Compile Include="web\core\IProcessRequests.cs" />
     <Compile Include="web\core\IMatchARequest.cs" />
     <Compile Include="web\core\RequestCommand.cs" />
-    <Compile Include="web\core\WebResponseEngine.cs" />
+    <Compile Include="web\core\aspnet\WebResponseEngine.cs" />
     <Compile Include="web\core\stubs\StubMissingCommand.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubResponseEngine.cs" />

@@ -6,8 +6,8 @@ namespace app.web.core
 {
 	public class CommandRegistry : IFindCommands
 	{
-		readonly IEnumerable<IProcessOneRequest> commands;
-		readonly IProcessOneRequest fallback;
+		 IEnumerable<IProcessOneRequest> commands;
+		 IProcessOneRequest fallback;
 
 		public CommandRegistry(IEnumerable<IProcessOneRequest> commands, IProcessOneRequest fallback)
 		{
