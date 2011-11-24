@@ -8,11 +8,11 @@ using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs
 {
-    [Subject(typeof(DisplayReportModel))]
-    public class DisplayReportModelSpecs
+    [Subject(typeof(ResponseEngine))]
+    public class ResponseEngineSpecs
     {
         public abstract class concern : Observes<IDisplayReportModels,
-                                                    DisplayReportModel>
+                                                    ResponseEngine>
         {
         }
 
