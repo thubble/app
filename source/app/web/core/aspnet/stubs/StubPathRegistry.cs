@@ -1,14 +1,10 @@
-﻿using System.Collections.Generic;
-using app.web.application;
-
-namespace app.web.core.aspnet.stubs
+﻿namespace app.web.core.aspnet.stubs
 {
-  public class StubPathRegistry:IFindPathsToViews
+  public class StubPathRegistry : IFindPathsToViews
   {
     public string find_path_for<ViewModel>()
     {
-      if (typeof(ViewModel) == typeof(IEnumerable<Department>)) return path_to("departmentbrowser");
-      return path_to("productbrowser");
+      return path_to("departmentbrowser");
     }
 
     string path_to(string page)

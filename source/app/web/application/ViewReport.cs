@@ -1,6 +1,5 @@
 ﻿using app.web.core;
 using app.web.core.aspnet;
-using app.web.core.stubs;
 
 namespace app.web.application
 {
@@ -15,8 +14,8 @@ namespace app.web.application
       this.response_gateway = response_gateway;
     }
 
-	public ViewReport(IRunQuery<TResponse> query)
-		: this(query, new WebResponseEngine())
+    public ViewReport(IRunQuery<TResponse> query)
+      : this(query, new WebResponseEngine())
     {
     }
 
