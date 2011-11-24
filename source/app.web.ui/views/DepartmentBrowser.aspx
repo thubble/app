@@ -9,7 +9,7 @@ CodeFile="DepartmentBrowser.aspx.cs"
             <table>            
             <% foreach (var department in this.model){%>
               <tr class="ListItem">
-               <td><a href="#"><%= department.name %></a></td>
+               <td><a href=<%= "\"get_departments_of_department.iqmetrix?name=" + department.name + "\"" %>><%= department.name %></a></td>
            	  </tr>        
               <% } %>
       	    </table>            

@@ -96,11 +96,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="web\core\BasicHandler.cs" />
+    <Compile Include="web\core\BasicRequestFactory.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\aspnet\CurrentContextResolver.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\IContainRequestInformation.cs" />
     <Compile Include="web\core\aspnet\ICreateAResponse.cs" />
+    <Compile Include="web\core\IMapRequestsToPaths.cs" />
     <Compile Include="web\core\IDisplayReportModels.cs" />
     <Compile Include="web\core\ISendAResponse.cs" />
     <Compile Include="web\core\ICreateRequests.cs" />
@@ -113,7 +115,7 @@
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\aspnet\WebResponseEngine.cs" />
     <Compile Include="web\core\stubs\StubMissingCommand.cs" />
-    <Compile Include="web\core\stubs\StubRequestFactory.cs" />
+    <Compile Include="web\core\stubs\StubRequestToPathMapper.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
     <Compile Include="web\core\stubs\TestStub.cs" />
   </ItemGroup>
