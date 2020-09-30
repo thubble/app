@@ -1,5 +1,5 @@
 require 'rake'
-require 'rake/clean'
+require 'rake\clean'
 require 'fileutils'
 require 'erb'
 require 'configatron'
