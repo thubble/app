@@ -74,8 +74,8 @@
     <None Include="build\support\003_tasks\windows\machine_specs.rb" />
     <None Include="docs\conventions.markdown" />
     <None Include="fetch_latest" />
-    <None Include="push" />
-    <None Include="Rakefile" />
+    <None Include="bump" />
+    <None Include="surevy file" />
     <None Include="run_first" />
     <None Include="save_my_changes" />
     <None Include="source\config\web.config.erb" />
